@@ -1,0 +1,148 @@
+/* === General Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* === Page Layout === */
+body {
+  background: linear-gradient(135deg, #f5f7fa, #e4ebf0);
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header.app-header {
+  text-align: center;
+  padding: 1rem;
+  background: #3a86ff;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+main.app-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* === Toolbar === */
+.toolbar {
+  width: 220px;
+  background: white;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.tool-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.tool-section label {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.tool-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #f1f3f4;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background: #dce1e6;
+  transform: scale(1.05);
+}
+
+button.active {
+  background: #3a86ff;
+  color: white;
+  font-weight: 600;
+}
+
+.user-status {
+  margin-top: auto;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.5rem;
+  background: #f5f7fa;
+  border-radius: 6px;
+  color: #555;
+}
+
+/* === Canvas Area === */
+.canvas-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#drawingBoard {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  cursor: crosshair;
+  width: 95%;
+  height: 90%;
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 0.8rem;
+  background: #fff;
+  color: #777;
+  font-size: 0.85rem;
+  border-top: 1px solid #ccc;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  main.app-container {
+    flex-direction: column;
+  }
+
+  .toolbar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .tool-section,
+  .tool-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #drawingBoard {
+    width: 98%;
+    height: 75vh;
+  }
+}

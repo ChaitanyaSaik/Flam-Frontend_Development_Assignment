@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Collaborative Drawing Canvas</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Real-Time Drawing Board</h1>
+  </header>
+
+  <main class="app-container">
+    <aside class="toolbar">
+      <div class="tool-section">
+        <label> Color</label>
+        <input id="colorPicker" type="color" value="#000000" />
+      </div>
+
+      <div class="tool-section">
+        <label> Brush Size</label>
+        <input id="brushSize" type="range" min="1" max="40" value="5" />
+      </div>
+
+      <div class="tool-buttons">
+        <button id="brushBtn" class="active">Brush</button>
+        <button id="eraserBtn">Eraser</button>
+      </div>
+
+      <div class="tool-buttons">
+        <button id="undoBtn">Undo</button>
+        <button id="redoBtn">Redo</button>
+      </div>
+
+      <div class="user-status">
+         Users Online: <span id="userCount">0</span>
+      </div>
+    </aside>
+
+    <section class="canvas-container">
+      <canvas id="drawingBoard"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <small> Tip: Open multiple browser tabs to see real-time collaboration!</small>
+  </footer>
+
+  <!-- Socket.io client library -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
